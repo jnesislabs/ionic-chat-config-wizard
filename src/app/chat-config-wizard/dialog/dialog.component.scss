@@ -1,0 +1,26 @@
+:host {
+
+    --me-color: #16348c;
+    --me-background-color: #dbe3f9;
+    --them-color: #333;
+    --them-background-color: #eee;
+
+    .message {
+        width: fit-content;
+        max-width: 85%;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .me {
+        color: var(--me-color);
+        background: var(--me-background-color);
+
+        float: right;
+    }
+
+    .them {
+        color: var(--them-color);
+        background: var(--them-background-color);
+    }
+}

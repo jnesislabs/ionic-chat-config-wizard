@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Chat config wizard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <chat-config-wizard-dialog [messages]="messages">
+    </chat-config-wizard-dialog>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <chat-config-wizard-actions>
+
+      <chat-config-wizard-action action="name">
+        <ion-input placeholder="Your name"></ion-input>
+        <ion-button>Next</ion-button>
+      </chat-config-wizard-action>
+
+      <chat-config-wizard-action action="birthdate">
+        <ion-datetime placeholder="Your birth date"></ion-datetime>
+      </chat-config-wizard-action>
+
+    </chat-config-wizard-actions>
+  </ion-toolbar>
+</ion-footer>

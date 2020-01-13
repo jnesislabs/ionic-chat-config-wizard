@@ -1,0 +1,9 @@
+<ion-grid class="messages">
+  <ion-row align-items-stretch *ngFor="let message of messages">
+    <ion-col>
+      <div [ngClass]="'message ' + message.type" >
+        {{message.text}}
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
