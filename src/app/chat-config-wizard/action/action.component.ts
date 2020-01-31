@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChatConfigWizardActionComponent implements OnInit {
 
   @Input() active = false;
+  @Input() name: string;
 
   constructor() { }
 

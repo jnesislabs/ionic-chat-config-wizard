@@ -3,10 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { ChatConfigWizardDialogComponent } from '../chat-config-wizard/dialog/dialog.component';
-import { ChatConfigWizardActionsComponent } from '../chat-config-wizard/actions/actions.component';
-import { ChatConfigWizardActionComponent } from '../chat-config-wizard/action/action.component';
-
+import  { ChatConfigWizardModule } from '../chat-config-wizard/chat-config-wizard.module';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -19,8 +16,9 @@ import { HomePage } from './home.page';
         path: '',
         component: HomePage
       }
-    ])
+    ],),
+    ChatConfigWizardModule
   ],
-  declarations: [HomePage, ChatConfigWizardDialogComponent, ChatConfigWizardActionsComponent, ChatConfigWizardActionComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}
