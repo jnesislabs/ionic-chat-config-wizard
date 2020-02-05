@@ -13,7 +13,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <chat-config-wizard-actions #actions (onActionTransition)="onActionTransition($event)" [action]="currentAction">
+    <chat-config-wizard-actions #actions (actionTransition)="onActionTransition($event)" [action]="currentAction">
 
       <chat-config-wizard-action name="name">
           <ion-input placeholder="Your name"  #nameInput></ion-input>
@@ -21,7 +21,7 @@
       </chat-config-wizard-action>
 
       <chat-config-wizard-action name="birthdate">
-        <ion-col align-self-stretch>
+        <ion-col class="ion-align-self-stretch">
           <ion-datetime placeholder="Your birth date"  #birthdateInput></ion-datetime>
         </ion-col>
         <ion-button (click)="actions.submitAction($event, birthdateInput.value)">Next</ion-button>

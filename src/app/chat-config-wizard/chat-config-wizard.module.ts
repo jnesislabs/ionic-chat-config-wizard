@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ChatConfigWizardDialogComponent } from './dialog/dialog.component';
 import { ChatConfigWizardActionsComponent } from './actions/actions.component';
 import { ChatConfigWizardActionComponent } from './action/action.component';
+import {IonicModule} from '@ionic/angular';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ChatConfigWizardActionComponent } from './action/action.component';
     ChatConfigWizardActionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ],
   exports: [
     ChatConfigWizardDialogComponent,

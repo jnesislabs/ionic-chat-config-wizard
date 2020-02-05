@@ -1,17 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'chat-config-wizard-action',
   templateUrl: './action.component.html',
   styleUrls: ['./action.component.scss'],
 })
-export class ChatConfigWizardActionComponent implements OnInit {
-
+export class ChatConfigWizardActionComponent {
   @Input() active = false;
   @Input() name: string;
 
   constructor() { }
-
-  ngOnInit() {}
-
 }
