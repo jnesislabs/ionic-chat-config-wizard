@@ -1,22 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-export interface Message {
-  text: string;
-  type: 'me'|'them';
-}
+import { Component, Input } from '@angular/core';
+import {Message} from './dialog.model';
 
 @Component({
   selector: 'chat-config-wizard-dialog',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
 })
-export class ChatConfigWizardDialogComponent implements OnInit {
-
-  @Input()
-  messages: Array<Message>;
+export class ChatConfigWizardDialogComponent {
+  @Input()  messages: Array<Message>;
 
   constructor() {}
-
-  ngOnInit() {}
-
 }

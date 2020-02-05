@@ -16,7 +16,7 @@ import { HomePage } from './home.page';
         path: '',
         component: HomePage
       }
-    ],),
+    ]),
     ChatConfigWizardModule
   ],
   declarations: [HomePage]

@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
-import { Message } from '../chat-config-wizard/dialog/dialog.component';
 import { ActionTransition } from '../chat-config-wizard/actions/actions.component';
 import { DatePipe } from '@angular/common';
+import {Message} from '../chat-config-wizard/dialog/dialog.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  providers:[DatePipe],
+  providers: [DatePipe],
 })
 export class HomePage {
 
-  public currentAction = "name";
+  public currentAction = 'name';
   public messages: Array<Message> = [];
 
   constructor(private datePipe: DatePipe) {
     this.messages = [{
-      text: "Hi, I hope you're having a good day",
+      text: 'Hi, I hope you\'re having a good day',
       type: 'them'
     }];
   }
 
-  public onActionTransition(transition: ActionTransition) {
-    switch(transition.actionName) {
+  public onActionTransition(transition: ActionTransition): void {
+    switch (transition.actionName) {
       case 'name':
         this[`${transition.transitionType}NameAction`](transition);
         break;
@@ -32,13 +32,14 @@ export class HomePage {
     }
   }
 
-  private beforeNameAction(action) {
+  private beforeNameAction(action): void {
     this.messages.push({
-      text: "Could you please tell me your name ?",
+      text: 'Could you please tell me your name ?',
       type: 'them'
     });
   }
-  private afterNameAction(action) {
+
+  private afterNameAction(action): void {
     const name = action.data;
     this.messages.push({
       text: `My name is ${name}`,
@@ -48,16 +49,17 @@ export class HomePage {
       text: `Nice to meet you ${name}`,
       type: 'them'
     });
-    this.currentAction = "birthdate";
+    this.currentAction = 'birthdate';
   }
 
-  private beforeBirthdateAction(action) {
+  private beforeBirthdateAction(action): void {
     this.messages.push({
-      text: "Could you please indicate your birthdate ?",
+      text: 'Could you please indicate your birthdate ?',
       type: 'them'
     });
   }
-  private afterBirthdateAction(action) {
+
+  private afterBirthdateAction(action): void {
     const birthdate = new Date(action.data);
     const formattedBirthdate = this.datePipe.transform(birthdate, 'mediumDate');
     const age = this.getAge(birthdate);
@@ -70,11 +72,11 @@ export class HomePage {
       text: `${age} years old, you're in the prime of life !`,
       type: 'them'
     });
-    this.currentAction = "end";
+    this.currentAction = 'end';
   }
 
-  private getAge(birthdate) {
-    const diff = new Date(Date.now() - birthdate.getTime());    
+  private getAge(birthdate): number {
+    const diff = new Date(Date.now() - birthdate.getTime());
     return Math.abs(diff.getUTCFullYear() - 1970);
   }
 
