@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActionTransition } from '../chat-config-wizard/actions/actions.component';
+import { ActionTransition } from '../chat-config-wizard/actions/actions.model';
 import { DatePipe } from '@angular/common';
 import {Message} from '../chat-config-wizard/dialog/dialog.model';
 

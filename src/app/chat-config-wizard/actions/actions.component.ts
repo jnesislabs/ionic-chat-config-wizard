@@ -12,12 +12,7 @@ import {
  } from '@angular/core';
 import { ChatConfigWizardActionComponent } from '../action/action.component';
 import { Subject } from 'rxjs';
-
-export interface ActionTransition {
-  transitionType: 'before' | 'after';
-  actionName: string;
-  data?: any;
-}
+import { ActionTransition } from './actions.model';
 
 @Component({
   selector: 'chat-config-wizard-actions',
